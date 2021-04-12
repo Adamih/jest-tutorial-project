@@ -21,8 +21,9 @@ const App = () => {
   const [user, setUser] = useState(null);
 
   const login = (email, password) => {
-    if (!users[email]) return;
-    if (passwords[email] !== password) return;
+    const errorMsg = "Invalid user credentials";
+    if (!users[email]) return errorMsg;
+    if (passwords[email] !== password) return errorMsg;
 
     setIsLoggedIn(true);
     setUser(users[email]);
