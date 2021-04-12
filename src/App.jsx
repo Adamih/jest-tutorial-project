@@ -5,15 +5,18 @@ import React, { useState } from "react";
 import LoginForm from "./components/LoginForm";
 
 const users = {
-  "adahen@kth.se": {
+  0: {
     id: 0,
-    username: "adamih",
+    username: "adahen",
     email: "adahen@kth.se",
   },
 };
 
 const passwords = {
-  "adahen@kth.se": "admin",
+  "adahen@kth.se": {
+    id: 0,
+    password: "admin",
+  },
 };
 
 const App = () => {
@@ -22,11 +25,11 @@ const App = () => {
 
   const login = (email, password) => {
     const errorMsg = "Invalid user credentials";
-    if (!users[email]) return errorMsg;
-    if (passwords[email] !== password) return errorMsg;
+    const res = passwords[email];
+    if (res?.password !== password) return errorMsg;
 
     setIsLoggedIn(true);
-    setUser(users[email]);
+    setUser(users[res.id]);
   };
 
   return (
