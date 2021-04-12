@@ -5,12 +5,7 @@ import userEvent from "@testing-library/user-event";
 import LoginForm from "./index";
 import { jest, afterEach, test, expect, describe } from "@jest/globals";
 
-const setup = () => {
-  
-}
-
 describe("Login component", () => {
-
   afterEach(cleanup);
 
   test("renders login form", () => {
