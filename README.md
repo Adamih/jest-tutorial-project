@@ -6,6 +6,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `docker-compose run --rm test`
+
+Launches the test runner from a docker container.
+
 ### `yarn start`
 
 Runs the app in the development mode.\
